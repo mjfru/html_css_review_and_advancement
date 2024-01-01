@@ -1,0 +1,11 @@
+-- The Web --
+The World Wide Web is an information system where documents are available over the Internet.
+
+These documents are transferred over HTTP - Hyper Text Transfer Protocol.
+HTTP is a formally defined set of rules for communication between a client (requester) and a server (responder).
+
+When you type an address into your address bar you are requesting the information / document at that address.
+The server receives your request, sends it back as code, and your browser interprets and renders it.
+A typical webpage will respond with code written in HTML, CSS, and JS; although not all 3 are required or must be used to build or read a webpage.
+
+A 404 Error occurs when that server cannot find the document you requested.
