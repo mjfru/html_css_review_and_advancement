@@ -1,0 +1,52 @@
+-- H(yper) T(ext) M(arkup) L(anguage) --
+The point of HTML is to take regular text and...mark it up!
+We can do this by italicizing text, creating headings, making links take us to other pages, etc.
+HTML was even created to allow research papers to be more easily shared.
+Imagine someone proofreading your paper and them saying "Make this a heading! This should be a button. This needs an input."
+
+
+-- HTML Elements --
+HTML consists of LOTS of elements that we can pick from to achieve different outcomes.
+There are over 100+ elements: headers, links, divs, paragraphs, spans, etc.
+
+
+-- <p> - Paragraph --
+A very common one is the <p></p> tag, the paragraph.
+Tags like these are important because our text editor ignores whitespace.
+
+
+-- HTML Document Structure --
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta Data Goes Here -->
+    <title>My Page</title>
+<body>
+    <!-- Content Goes Here -->
+    <h1></h1>
+    <p></p>
+</body>
+</head>
+</html>
+
+A shortcut to make all of this is simply typing '!' and tab when creating a new HTML document in VSCode.
+
+
+-- Comments in HTML --
+Browsers will ignore any code wrapped in comment tags.
+Use comments to write notes in your code or temporarily disable elements.
+They open with '<!--' and close with '-->'. 
+Your note or code you want to disable goes between these.
+
+In VSCode, if you select your code and press CTRL + '/', it acts as a shortcut.
+You can also do this by selecting 'Ctrl' + 'p' to open the command palette and search for comment toggles (or find the shortcut for comments).
+
+
+-- Creating Headings --
+Headings add structure to our document and six different headings and section headings are available for us to use.
+<h1> - <h6> (all with closing tags, of course), h1 having the largest default font-size with h6 having the smallest.
+
+Do NOT choose heading tags based on what font size you want. This can always be changed with CSS.
+<h1></h1> is reserved for only the main topic of your page. Best practice is to only have one per page.
+You should NOT use <h6>, <h5>, etc. tags if you do not have all of the levels above it filled.
+You shouldn't go from a <h3>, not have an <h4>, and then use an <h5>, for example.
