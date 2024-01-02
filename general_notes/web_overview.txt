@@ -9,3 +9,11 @@ The server receives your request, sends it back as code, and your browser interp
 A typical webpage will respond with code written in HTML, CSS, and JS; although not all 3 are required or must be used to build or read a webpage.
 
 A 404 Error occurs when that server cannot find the document you requested.
+
+
+-- The Roles of HTML, CSS, & JavaScript --
+In a nutshell:
+HTML - The content on a page (nouns)
+CSS - The styles applied to the page content (adjectives)
+JS - The behavior or action of the page's contents (verbs)
+
