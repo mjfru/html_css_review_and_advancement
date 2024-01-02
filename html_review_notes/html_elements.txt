@@ -1,0 +1,112 @@
+-- Common HTML Elements --
+
+-- Unordered Lists --
+Unordered lists are created using the <ul> </ul> tags and populating them with line items - <li> </li> tags within.
+Unordered lists create a bulleted list of items.
+
+Example:
+<ul>
+    <li>Flour</li>
+    <li>Baking Soda</li>
+    <li>Brown Sugar</li>
+</ul>
+
+-- Ordered Lists --
+These act nearly the same as unordered lists but have numerical values instead of bullets.
+The rules are the same except we now use <ol> </ol> and populate them with <li> </li>.
+
+Example:
+<ol>
+    <li>Preheat Oven</li>
+    <li>Grease Pan</li>
+    <li>Bake for 30 minutes</li>
+</ol>
+
+You should never have an <li> tag by itself, they belong in a list!
+
+You can also nest lists within other lists.
+For example:
+<h2>Recipe Ingredients:</h2>
+    <ul>
+        <li>Chicken Breast</li>
+        <li>Parmesan Cheese</li>
+        <li>Tomatoes
+            <ul>
+                <li>Canned Tomatoes</li>
+                <li>Fresh Tomatoes</li>
+            </ul>
+        </li>
+    </ul>
+
+
+-- The Em, Strong, B, and I Elements - Text-based Elements --
+
+-- Emphasis --
+<p>"Just <em>do</em> it already!"</p>
+The <em> elements surrounds text that should have a stressed emphasis relative to the text around it.
+Most browsers will render it in italics but CSS can change this if you wish.
+
+-- Italics / Idiomatic Text Element --
+Use the <i> element for text that is set off from the normal text for some reason (foreign words, technical terms, etc.).
+Use it for text that is traditionally italicized, only when there is not a more suitable element!
+Recently, there has been a CSS movement to avoid using stylized elements that can be done in CSS.
+
+-- Strong --
+Use the strong <strong> element for text that has special significance.
+Browsers will display this as bold, but again, you can change this in CSS.
+<p>Whatever you do, <strong>do not let the cats out!</strong></p>
+
+-- Bold - Bring More Attention to --
+Use the <b> element to bring attention to text.
+Use it for text that is traditionally bolded, only when there is not a more suitable element.
+<p>This is an <b>HTML</b> course.</p>
+
+
+-- Nesting Elements --
+HTML is really all about nesting elements together.
+For example, everything is in our initial <html> tag, then our body contains all our content, such as header tags, p tags, and so on.
+Within a tag may be another tag, such as a <p> tag using a <em> tag within it.
+
+
+-- Superscript <sup> & Subscript --
+Superscript <sup></sup> is used to designate text with a raised baseline with smaller text, such as a common date-naming convention <h1>4<sup>th</sup> of July</h1> or exponents for example.
+
+Subscript <sub></sub> is used to designate text with a lowered baseline with smaller text, such as chemical formulas...<h1>H<sub>2</sub>0</h1>.
+
+
+-- Inline vs. Block Elements --
+Certain elements take up an entire block, they go ALL the way across their container.
+Inline elements only take up what is required for itself. <p> tags are a great example of this.
+Inline elements will not push each other onto new lines but block elements will.
+
+
+-- Creating Links, the <a> Tag --
+Links require two pieces of information to be inserted into our HTML page:
+    1. Link text - What does the link actually say?
+    2. Destination - The url address to the other webpage.
+
+Use the anchor <a> element to create hyperlinks to other webpages and documents.
+<a href="https://github.com">My Github</a>
+The 'href' here is an attribute, a property of an element, that go inside the -opening- tag and should be the url address to the desired site.
+
+
+-- Other Types of Links --
+
+-- Relative Links --
+These are links that go to other local pages that you've created, say, to go from the 'home' page to the 'about' page.
+That syntax would look like this:
+<a href="contact.html">About</a>
+
+-- Links to Elements --
+We can create links to elements on the same page if the element has an id (another type of attribute) assigned to it.
+
+<a href="#section_below>Jump to the next section</a>
+<h2 id="section_below">This is the next section!</h2>
+
+
+-- Images --
+We can create image elements using the <img> tag...and no, it does not have a closing tag!
+<img src="dog.png" alt="my dog">
+The 'src', source, attribute specifies the location of the image to be displayed.
+These images can be local or on the internet. (Colt showed Unsplash as a good source for images.)
+The 'alt' attribute stands for alternate text and is used for screen readers or if there is an issue with our image loading.
