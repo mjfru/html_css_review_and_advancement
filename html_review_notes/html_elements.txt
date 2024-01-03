@@ -69,9 +69,9 @@ Within a tag may be another tag, such as a <p> tag using a <em> tag within it.
 
 
 -- Superscript <sup> & Subscript --
-Superscript <sup></sup> is used to designate text with a raised baseline with smaller text, such as a common date-naming convention <h1>4<sup>th</sup> of July</h1> or exponents for example.
+Superscript <sup> </sup> is used to designate text with a raised baseline with smaller text, such as a common date-naming convention <h1>4<sup>th</sup> of July</h1> or exponents for example.
 
-Subscript <sub></sub> is used to designate text with a lowered baseline with smaller text, such as chemical formulas...<h1>H<sub>2</sub>0</h1>.
+Subscript <sub> </sub> is used to designate text with a lowered baseline with smaller text, such as chemical formulas...<h1>H<sub>2</sub>0</h1>.
 
 
 -- Inline vs. Block Elements --
@@ -95,13 +95,13 @@ The 'href' here is an attribute, a property of an element, that go inside the -o
 -- Relative Links --
 These are links that go to other local pages that you've created, say, to go from the 'home' page to the 'about' page.
 That syntax would look like this:
-<a href="contact.html">About</a>
+<a href="contact.html"> About </a>
 
 -- Links to Elements --
 We can create links to elements on the same page if the element has an id (another type of attribute) assigned to it.
 
-<a href="#section_below>Jump to the next section</a>
-<h2 id="section_below">This is the next section!</h2>
+<a href="#section_below> Jump to the next section </a>
+<h2 id="section_below"> This is the next section! </h2>
 
 
 -- Images --
