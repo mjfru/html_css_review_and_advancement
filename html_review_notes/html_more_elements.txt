@@ -1,0 +1,52 @@
+-- Elements for Style, Arrangement, and Display --
+
+-- Span --
+The <span> </span> tags are simply generic inline elements.
+There's no special meaning behind them but they become valuable when selecting certain elements to style with CSS.
+
+Remember, inline elements fit - in the line -, they're not block elements, they only take up what space they need and carry on from there.
+
+We use span if we want to make some element look different than what surrounds it.
+<span>Danger</span> do not click this <button>Button</button>.
+The text in the span can be styled, say to be red, and stand out from the rest of the text.
+Without using CSS, the span makes NO difference to the overall look of this HTML.
+
+
+-- Div --
+My favorite element - the <div></div>!
+Another element that has no inherit meaning but act as generic containers.
+They're used to group content together for styling purposes.
+
+
+-- Tables --
+Tables have been losing relevance slightly but it's still important to mention them here.
+Perhaps, this is because they consist of lots of elements.
+
+First, we establish a <table> </table> element. This has no impact on what's on your HTML, it just tells your page to expect an HTML table is coming.
+The <tr> </tr> (table row) element creates a row in that table.
+These rows are then populated with <td> </td> elements, table data.
+<table>
+    <tr>
+        <td>Beer</td>
+        <td>$4.50</td>
+    </tr>
+    <tr>
+        <td>Wine</td>
+        <td>$4.00</td>
+    </tr>
+</table>
+
+However, headings or titles for these rows are missing!
+We need <th> </th> tags, which are used instead of <td> tags inside of your initial (probably) <tr> </tr>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+    </tr>
+</table>
+
+This bolds them and aligns them centrally by default. Naturally, all of this can be changed in CSS.
+
+Furthermore, there are 3 options to segment our table for clarity.
+<thead> <tbody> <tfoot>

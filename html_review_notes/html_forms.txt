@@ -1,0 +1,122 @@
+-- HTML Forms --
+
+-- Text Inputs --
+The input element is versatile.
+Set type="text" to create a standard text input/field.
+<input type="text">
+Like the <a> tag, it is self-closing!
+
+
+-- Buttons --
+Buttons DO have a closing tag because we specify the text of the button between the tags.
+<button type="submit">Click Me!</button>
+This particular button matches with whatever the "submit" function is on the backend.
+
+Both Text Inputs and Buttons are -- inline elements --!
+
+
+-- Form (the element) --
+Forms group together different form controls...multiple fields, buttons, labels, etc. and specifies where the data from the particular form should be sent.
+Forms typically have an action (what the form should do upon submission) and a method (GET, POST, etc.), an HTTP request, again mostly used in the backend.
+Think of the action as 'where' and the method as 'how' information should be sent.
+
+
+-- Name --
+The name attribute is very important when we're building a real form that actually sends and works with data from the form.
+However, it has no bearing on the frontend engineering.
+<input type="text" name="firstname">
+Every input type should have a name attribute!
+
+-? Try out ?-
+<form action="http://www.google.com/search">
+    <input type="text" name="q"
+    <button>Submit</button>
+</form>
+- This will perform a Google search with whatever the content of your input is.
+
+
+-- Placeholder --
+The placeholder attribute populates an input form until the user begins to type their own information.
+Typically, placeholders are greyed out.
+<input type="text" name="lastname" placeholder="Last Name">
+
+
+-- Labels --
+Labels <label>First Name: </label> are just text that name what an input is expecting.
+The for attribute in a label needs to correspond to the input's id.
+
+For example:
+<label for="username">Username: </label>
+<input type="text" id="username">
+
+We do this for accessibility and making backend connections.
+Also, if you now click on the label (not sure why you'd do this...) it will focus you in on the connected input field.
+
+
+-- The Wide World of Inputs --
+Password fields are another type of common input fields.
+<input type="password"> - This obscures the text the user enters.
+<input type="number"> - Accepts only numbers as input.
+<input type="email"> - Looks identical to a text input but has validation parameters in place to check if the provided text is a valid email format. (Such as requiring a '@' symbol)
+More inputs like this exist for urls, phone numbers, etc.
+
+<input type="color"> - Provides a color picker input
+
+The -- required -- attribute can go in any input (opening tag, of course), which requires the user to fill out the specified field in order to submit.
+
+
+-- Textarea --
+Similar to a text input, a textarea tag is used to create a multi-line text input.
+Within the opening tag, you can specify how many rows and columns this area should be.
+<textarea row="5" columns="10"> Here is my textarea! </textarea>
+* Note that textarea has a closing tag, unlike our typical input tag.
+
+
+-- Range Input --
+Ranges create a slider-type input where you can specify a minimum and maximum value.
+<input type="range" min="0" max="10" step="2" name="volumelevel">
+
+You can control the 'steps' to change the increments (0 - 2 - 4...)
+
+
+-- Checkboxes --
+The checkbox type creates...well, a checkbox element!
+
+<label for="agree">I agree</label>
+<input type="checkbox" id="agree" name="tos">
+<button>Submit</button>
+
+It is critical to label checkbox elements to be able to identify their values.
+* Sidenote, trailing slashes (/>) are NOT required.
+A checked checkbox equates to 'on' and unchecked equates to 'off'.
+
+
+-- Selects --
+The select element creates what many refer to as a 'drop-down' bar.
+In order to properly use the select element, we need to incorporate two things:
+    1. The actual select element
+    2. The options that 'drop-down' container will have pre-rendered.
+
+<label for="pet-select">Select what kind of pet you want to adopt: </label>
+<select name="pets" id="pet-select">
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+</select>
+
+The value attribute is what is - actually sent - to the server upon submission.
+This matters more to developers than to end-users.
+
+
+-- Radio Button --
+Radio buttons are usually grouped together and provide users with an list of options to choose from.
+It's important to note that only ONE option can be selected from these choices.
+
+<label for="phone">Call Me</label>
+<input type="radio" id="phone" name="contact" value="phone">
+<label for="email">Email Me</label>
+<input type="radio id="email" name="contact" value="email">
+
+The name attribute here makes sure that these radio buttons are grouped and connected together.
+Otherwise, you'd be able to select both options and your form would be a little...off.
+
+The value attribute here is what will be sent to the server, just like the option value from the above section.

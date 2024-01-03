@@ -1,0 +1,16 @@
+-- Semantic Markup / HTML --
+When writing HTML, we want the tags to "say" something about the content inside of them.
+
+Think of the difference between a <span> tag and an <h1> tag.
+We can make the <span> as big as we like, but semantically, it doesn't carry the same weight as an <h1> tag.
+
+In the context of HTML, semantic HTML is fairly new, with over 100+ elements to choose from now.
+While semantic HTML elements behave the same way as the old style of doing this, using lots of <div>s, they provide more meaning to developers, search engines, and screen-readers.
+
+Examples:
+<main></main> - This is the main content of the body of the document.
+<header></header> - Highlights introductory content
+<footer></footer> - The end of content - footnotes, copyright information. Can be for an entire page or a section of content.
+<nav></nav> - Used for navigational content, such as navbars, sidebars, and breadcrumbs.
+<aside></aside> - Used to represent content that is only indirectly related to the document's main content.
+<time></time> - An inline element used to wrap around any time or date related content. Useful for SEO purposes.
