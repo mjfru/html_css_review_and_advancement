@@ -59,3 +59,14 @@ p {
 }
 
 Selects all the <p> tags in your HTML page.
+
+
+-- Comments in CSS --
+To turn code on/off in CSS, we can use /* and stop it with */
+
+/* body {
+    background-color: red;
+}
+*/
+The above code will be greyed-out and not working!
+* Ctrl + / is a shortcut for comments in VSCode.
