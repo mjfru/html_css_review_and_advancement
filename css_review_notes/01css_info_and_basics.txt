@@ -1,0 +1,61 @@
+-- Basic CSS & Information --
+
+-- Ways to Style with CSS --
+There are 3 different ways we can write styles in CSS:
+    1. Inline
+    2. Internal
+    3. External
+
+
+-- Inline Styling --
+So naturally, let's start with the worst way first, inline styling!
+With inline styling, we directly embed our styling information into the HTML tag.
+
+<p style="color:blue;">Lorem ipsum</p>
+This is cumbersome because we have to go through each element and type out the styling and there is no styling being shared between pages.
+
+
+-- Internal Styling --
+Internal here means that we embed the CSS directly into our HTML document, but not inline with the individual elements.
+Here, our traditional style page is written in the <head></head> of the HTML page, where the rest of our meta data goes.
+
+<html>
+    <head>
+        <style>
+            p {
+                color: green;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+</html>
+
+This CSS will tell the <p> elements to be green and have a font-size of 24px.
+No matter how many <p> tags we have, they will all follow this rule unless we specify otherwise.
+The downfall of this is that if we have multiple pages, we have to go back and change each HTML page manually.
+Additionally, it might add tons of properties, making your HTML page clunky and hard to change and manage.
+
+
+-- External Styles --
+External here means we write our CSS in another file...a CSS file and is by far the most common and practical!
+In the <head> of the HTML page, we put a <link rel="stylesheet" href="app.css" />
+Of course, the href may be different depending on your own naming conventions.
+* Note: the <link/> is self-closing.
+
+
+-- The Anatomy of CSS --
+We select some element or elements and then inside of the curly braces, we specify what we want to modify.
+
+(element) div {
+    (property_name: value;)
+    width: 50px;
+}
+
+
+-- The Element Selector --
+Selects all elements of the same type.
+p {
+    color: red;
+}
+
+Selects all the <p> tags in your HTML page.
