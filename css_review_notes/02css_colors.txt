@@ -1,0 +1,83 @@
+-- Color & Background-Color Properties --
+We use the color property to change the - text - color of an element.
+Background-color changes, well, the background of the selected element!
+
+For example:
+li {
+    background-color: grey;
+}
+Each line element here will now have a grey background.
+
+h1 {
+    color: green;
+    background-color: yellow;
+}
+
+Green text / Yellow background for our h1 tags now.
+Background colors will apply block or inline styling depending on the element they're used on.
+
+
+-- Named Colors --
+There are about 140 different 'named' colors that are baked into CSS that we can choose from.
+Some examples include: red, magenta, rebeccapurple, blanchedalmond, slategrey, etc.
+These are often not used in the real-world setting but rather for testing or comparisons.
+
+
+-- RGB Colors --
+This system, comprised of three numbers in parentheses, allows us to choose from millions and millions of colors.
+RGB - Red, Green, Blue - All colors we create here are a synthesis of these three colors and hence, the three colors we use in the parentheses.
+The syntax looks like this:
+
+rgb(100 (red channel), 10 (green channel), 200 (blue channel))
+rgb(100, 10, 200)
+These numbers can go from 0 to 255.
+
+An easy example is this: rgb(0, 0, 255) - we see that the last value, the blue, is maxed out while the others have a value of zero.
+This will give us a "full/pure" blue.
+
+
+-- Hexadecimal Colors --
+The syntax here is quite different, but Hexadecimal colors are may favorite to use.
+# eb 13 bc
+
+Every hexadecimal color begins with a #, followed by two digits (0 - FF) representing red, then two more for green, and two more for blue.
+0 - 9 and A - F are used so we can have 15 (hence hexadecimal) unique values to make color combinations.
+
+Some specific colors have shortcuts, reducing the character count from six to three.
+For example, #FFFFF (white) can be #FFF.
+When each pair is the same, you can break it down into three characters.
+
+
+-- RGBA & Opacity --
+We can control opacity in a few ways, one of which using RGBA.
+This works the same as RGB colors, but now with the A (alpha channel) component, we can control how opaque/see-through it is.
+
+rgba(200, 0, 255, 0.5)
+The last character represents, on a scale from 0.0 - 1.0, how opaque the color will be.
+1.0 is totally solid while 0.0 is totally clear and non-existant.
+
+Another option to control this is...opacity!
+Opacity can take the same 0.0 - 1.0 system or percentage.
+
+h2 {
+    background-color: cyan;
+    opacity: 0.5;
+}
+
+* Important: Using opacity here will change both the background color AND the text itself.
+If we used the RGBA to make this color and set the opacity, only the background would be changed, not the text as well.
+
+
+-- Inheritance --
+Some CSS properties, like color, are inherited from parent elements if no value is specified.
+Other properties are not inherited and instead have a default initial value.
+
+For example, <p>Hello <em>you</em></p> is styled to have, say, blue as its color value.
+The text within the <em> tag will also now be blue due to inheritance.
+<p> is a parent of the <em> tag in this case.
+
+Another example of this would be the <li> elements within an <ol> or <ul> list.
+
+Properties such as border, however, are not inherited. They only apply to what they're assigned to.
+
+** You can change this by setting border: inherit to a child element. It will take the border settings that are applied to the parent element (a div, for example) and apply it all child elements within.
