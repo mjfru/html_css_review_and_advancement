@@ -1,0 +1,110 @@
+-- Text Transform --
+The - text-transform - property changes the capitalization (uppercase, lowercase, capitalize) of text.
+This is merely stylistic, it does not alter the actual HTML.
+
+p {
+    text-transform: uppercase; (capitalizes everything in p tags.)
+}
+
+
+-- Text Decoration --
+Sets the appearance of decorative lines on text.
+Can create multitudes of underlines (dotted, solid, wavy, dashed, double, etc).
+This can be seen in the default styling for <a> tags!
+
+This is known as a shorthand property; four properties are baked into one.
+
+So this:
+h2 {
+    text-decoration-line: line-through;
+    text-decoration-color: navy;
+    text-decoration-style: wavy;
+}
+
+Can become this:
+h2 {
+    text-decoration: navy line-through wavy;
+}
+
+Also, you can remove default underlines by setting the following:
+
+a {
+    text-decoration: none;
+}
+
+A newer property is text-decoration-thickness, which can also be inserted into the shorthand property as well.
+
+
+-- The ID Selector --
+Including id="name" in the opening tag can hone in on a single element we want to style or select.
+
+In CSS, the # selects an id, followed by the name of the id.
+However, you are only supposed to have one of each unique per page!
+The whole concept is that an ID occurs only one time.
+
+#name {
+    font-weight: bold;
+}
+
+
+-- The Class Selector --
+Classes are typically used when we have multiple elements we want to style, there are no limitations unlike with IDs.
+
+In CSS, the . selects the class, followed by its name.
+
+.highlight {
+    background-color: yellow;
+    text-decoration: underline;
+}
+
+
+-- Styling Lists --
+The property list-style-type is responsible for controlling the markers next to line items in unordered lists.
+(It's even more customizable with the @counter-style rule, more on that later.)
+These include: disk (default), circle, square, decimal, none, etc.
+* Nav bars typically use lists that do without any kind of styling.
+
+#my_ul_list {
+    list-style-type: circle;
+}
+
+You can also put a character of your choosing by typing: list-style-type: "*"; (* for example)
+We can also control the position of the marker; inside or outside (default being outside). 
+Finally, list-style-image lets us provide a URL to set it as the marker image.
+
+
+-- Styling Links --
+Users have come to expect some level of interactivity when it comes to links.
+An underline beneath the link, your cursor changing shapes, a pop-out box previewing what the link goes to.
+Perhaps you visited the page and go back to the original one; typically, the visited link changes colors to indicate that it was used.
+
+This is where we use a pseudo-class.
+
+a:hover {   (This is used heavily!)
+    text-decoration: underline;
+    color: orangered;
+}
+
+a:visited {
+    color: violet;
+}
+
+
+-- Cursor --
+Your cursor can be customized too!
+You can change it for its default behavior, when you're hovering a clickable element, or want some special feature. (Pointer is the default.)
+
+a {
+    cursor: crosshair;
+}
+
+
+-- Font --
+Yes, this is its own property and it's a shorthand one!
+This sets all the different properties of an element's font at once (family, size, stretch, style, variant, weight, height).
+Values that are absolutely required are the font-size and font-family.
+
+h1 {
+    font: 400 50px serif;
+}
+(weight, size, family)
