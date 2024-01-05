@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Farsan&family=Indie+Flower&display=swap');
+/* Typically I do this in HTML, but I wanted to try this way for a change. */
+
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-style: italic;
+    font-size: 50px;
+    color: #7314cc
+}
+
+h3 {
+    font-family: "Indie Flower";
+    color: rgb(200, 120, 192);
+    font-size: 35px;
+}
+
+p {
+    font-weight: 100;
+    font-size: 40px;
+    line-height: 2;
+    letter-spacing: 10px;
+}
