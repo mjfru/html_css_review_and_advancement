@@ -1,0 +1,110 @@
+-- Styling Text --
+
+-- Font Family --
+The font-family property changes what font our selected element appears in.
+It expects us to list a font and an additional, optional, family of fonts as well.
+"Use this font but if you can't find it, default to this font-family."
+
+h1 {
+    font-family: "Segoe UI", Futura, sans-serif;
+}
+^ This is refered to as a 'font-stack'; a list of fonts you want to use for your page in descending order.
+It's a good idea to always include a fallback font-family that can be commonly found/adapted on both Mac and Windows OS systems.
+
+
+-- Font-size --
+This governs the size of text, nice and simple.
+Many HTML elements come with a default font-size which can be changed using CSS.
+Font-size can take many values (px, %, rem, em, etc.) and those will be explored more at length in a later section.
+
+h2 {
+    font-size: 24 px;
+}
+
+
+-- Font-weight --
+This controls the boldness of the text.
+By default, headings are bolded and elements such as <p> and <a> are not.
+Of course, all of this can be customized by using CSS and utilizing the font-weight property.
+This accepts things like "bold", numeric values 100 - 900 (400 being normal).
+* Many fonts do not accept numerical values under 400 to appear lighter.
+
+p {
+    font-weight: bold;
+}
+
+-- Font-style --
+This is similar to font-weight, but this one controls the italics of the font.
+
+a {
+    font-style: italic;
+}
+
+em {
+    font-style: normal;
+}
+
+
+-- Text-align --
+An extremely useful, inheritable property to change the alignment of your text on your webpage.
+By default (in English), text-align is set to left to meet our typical writing and reading conventions.
+
+However, this doesn't mean that it will necessarily be centered on our page but it will be centered within its parent element.
+
+h1 {
+    text-align: center;
+}
+
+Other values include: left, right, justify, start (left), end (right).
+
+
+-- Letter Spacing --
+This controls the spacing behavior between the letters on your webpage.
+
+h1{
+    letter-spacing: 10px;
+}
+^ This puts 10 pixels of space between each letter in your h1 tag. 
+* Also accepts negative values!
+
+
+-- Word Spacing --
+Same concept but this controls the spacing between words on your webpage.
+Also accepts negative values.
+
+p {
+    word-spacing: 20px;
+}
+
+
+-- Line Height --
+Line height controls the spacing between lines of text on your webpage.
+
+p {
+    line-height: 2; (not px! this effectively gives you a 'double-spaced' look. This is a multiplier. 3 would be 3x the normal spacing.)
+}
+
+This property accepts decimal values, pixels, em, rem, etc.
+
+
+-- Text Shadow --
+This property adds shadows or outlines of a few varieties.
+It accepts multiple values, the syntax is flexible but the conventional way is as follows:
+
+text-shadow: offset-x offset y blur-radius color;
+Offset-x determines how far away the shadow on the x axis (left-right) and offset-y determines the y axis (up-down).
+
+The blur-radius defaults to 0 if not provided but determines how big, wide, and bright the blur of the shadow is (almost like a glow).
+0 is no blur, the letters will have sharp edges whereas the higher the number, the more distortion there is.
+
+h2 {
+    text-shadow: -4px 2px 1px goldenrod;
+}
+
+* It's almost possible to have multiple shadows, seperated by a comma!
+
+h2
+{
+    text-shadow: -4px 2px pink, -8px 4px goldenrod; 
+    (keep in mind to change the values for further shadows or they'll stack on top of each other and won't be visible.)
+}
