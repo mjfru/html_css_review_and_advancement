@@ -1,0 +1,97 @@
+-- Selectors --
+
+-- The Universal Selector --
+The universal selector (*) selects everything in the document.
+This is mostly used when we want to reset styles. It's very rare that we'd want to have something applied to -everything- on the page.
+
+* {
+    margin: 0;                  Resets the default margins
+    border: 2px solid blue      Everything on the page, every element will have a border.
+}
+
+-- Review of Other Selectors (So Far!) --
+
+p {
+    color: red;                 Makes all p elements red.
+}
+
+.nav {
+    text-decoration: none;      Makes all elements with the class 'nav' appear w/o decoration
+}
+
+#feature {
+    background-color: gold;     Makes the single id of feature have a gold background.
+}
+
+
+-- The Attribute Selector --
+The attribute selector can choose elements based on the presence or value or certain attributes.
+For example, you can select what -kind- of input you want to target with the attribute selector.
+The syntax looks like this: the element we want to select, [type="____"] (the value we're trying to match, i.e. email or password).
+
+input[type="number"] {
+    background-color: green;
+}
+
+There is some fancier syntax for being even more specific, however.
+
+a[href*="wiki"] {
+    color: blue;                Links with "wiki" anywhere in the URL will be blue.
+}
+
+a[href^="#'] {
+    color: gold;                Links with a URL that starts with '#' will be gold.
+                                (Reminder: Links to another part of the document)
+}
+
+a[href$=".org"] {
+    color: green;               Links with a URL that ends with ".org". will be green.
+}
+
+
+-- Grouping Selectors Together --
+A simple comma can select two elements together.
+This is really common practice to keep consistency with styling your webpage.
+
+h1, h2 {
+    text-decoration: underline;
+}
+
+This can be applied to anything, ids, classes, etc. and they do not have to be the same type of selectors either.
+
+
+-- Descendant Combinator --
+The " " (space) combinator selects elements that are descendants of the first element!
+
+div h2 {
+    color: red;                 This selects only h2 tags that are children (inside) of a div!
+}
+
+#special span {
+    background-color: green;    Selects only spans inside of the 'special' id tag.
+}
+
+You can have multiple layers too... #special li span {...} for example.
+
+There's a second combinator as well, the Child Combinator (direct descendant):
+
+ul > li {
+    ** !style! **
+}
+
+The > combinator selects elements that are ONLY DIRECT children of the first element.
+
+
+-- Compound Selector --
+We can combine class, id, and element selectors (without spaces - important!).
+The example below selects divs with the class "special"
+
+div.special {
+    ** !style! **               Most commonly paired with classes, like this
+}
+
+h2#intro {
+    color: violet;
+}
+
+** Important to note that elements can have more than one class!
