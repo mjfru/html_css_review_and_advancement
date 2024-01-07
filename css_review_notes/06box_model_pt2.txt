@@ -1,0 +1,117 @@
+-- The Box Model...Continued! --
+
+-- The Display Property --
+Different elements, as discussed earlier, can have different initial values.
+A <span> tag, for instance, is an inline element, whereas an <h1> element is a block element.
+
+Here's where the -- display -- property comes in.
+This property sets whether an element is treated as a block or inline element...and some other important styling aspects to be discussed later.
+
+We can change the property of a span, for example, to act like a block element.
+
+Block elements:
+    - Breaks onto a new line, respecting width & height
+    - Padding, margin, & border cause other elements to be pushed away
+    - The box extends in the inline direction to fill the available space (unless styled differently)
+
+Inline elements:
+    - Do not break onto a new line; doesn't apply width and/or height
+    - Vertical padding, marding, and borders apply but do not cause other inline elements to move away from the box.
+    - Horizontal padding, margin, and border WILL apply and cause other boxes to move away.
+
+And...inline-block:
+    - Hybird of inline and block (obviously!)
+    - Box does NOT break onto a new line
+    - Width & height are respected
+    - Padding, margin, & border will cause other elements to be pushed away from the box.
+
+
+-- Display: None --
+This property hides an element and the spaces it occupies.
+Why would we do this?
+    - To account for different screen sizes and what visible at what point (media queries).
+
+
+-- Negative Margins --
+You can provide a negative value for the margin property.
+This takes space away from wherever you declared your negative margin!
+
+h1 {
+    margin: -10px;
+}
+
+
+-- Auto Margins --
+The 'auto' value of the margin property -usually- means that the element will be centered.
+This, however, does not work in the vertical direction!
+
+
+-- Margin Collapse --
+If you have items stacked one on top of another, the margins don't double.
+If you have two <p> tags, for example:
+
+p {
+    margin: 20px 0px;
+}
+
+Yes, the first tag will have 20px of margin on top and seemingly on the bottom...but the second <p> tag doesn't have 20px of top-margin on its own.
+It has collapse into the first elements margin to be spaced evenly.
+They don't push each other away, the larger margin simply 'wins'.
+We only have to worry about margins collapsing when using the 'default' layout, the flow layout.
+When flexbox, grid, etc. is used, we can safely disregard this!
+
+
+-- Max & Min Width --
+When using the propety 'min-width' is specifies the absolute minimum an element can shrink to when the screen size is reduced.
+Widths may change, especially if we denote them with percentages, based on the users' screen sizes.
+
+.content {
+    min-width: 300px;       This prevents this content class from ever appearing smaller than 300px, regardless of the screen size.
+}
+
+The same principal applies for using max-width, regardless of how big the parent element or screen size may be.
+
+
+-- Border Radius --
+This property rounds the corners of an element's outer edge.
+
+.box {
+    border-radius: 20px;
+}
+
+A border radius set to 50% on any square element...will appear to be a circle!
+A rectangle results in an oval if set to the same amount.
+
+There is also syntax such as: border-radius-top-left: 20px;
+Or a shorthand: border-radius 10px 20px 15px 30px; (clockwise from 12 o'clock again)
+
+
+-- Box Shadow --
+This property adds a shadow around an element and takes quite a few properties for customization.
+Typically we use these for very light, diluted shadows to give some elements an illusion of depth.
+
+.box {
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: (offset-x, offset-y, color) 10px 10px black;
+}
+box-shadow: (10px 10px 20px (<- new!) black)
+A fourth parameter is the blur-radius, similar to text-shadow.
+This is how many pixels it takes until the color disappears.
+
+You can also add multiple box shadows for some layering, seperated by a comma.
+
+
+-- Overflow (and Dealing with It!) --
+This allows us to specify what should happen when the content of an element is too big to fit in its box.
+Imagine, you have a relatively small box and too much text to possibly fit inside.
+The default behavior is for the content to overflow the container, running outside the container and its border.
+
+overflow: hidden; - cuts off the element at the bounds of the container.
+overflow: scroll; - adds a scroll feature to make it a scrollable element.
+
+overflow-x and overflow-y can give you more control over which direction you want to overflow or scroll to.
+These properties take the :hidden value typically.
