@@ -36,3 +36,26 @@ h1 {
 a.active {
     border-bottom: 1px solid black;
 }
+
+.image-gallery {
+    padding: 16px;
+}
+
+.picture-card {
+    width: 49.75%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.picture-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.picture-card h2 {
+    display: inline-block;
+    margin: 8px 0 16px 0;
+    font-weight: 300;
+}
