@@ -97,3 +97,29 @@ The pecking order goes like this:
 2. ID selectors
 3. Class | Attribute | Pseudo-Class
 4. Type | Pseudo-Elements               (least)
+
+What if we have something like h1 + div + span.featured ?
+How does this compare to other things, does the combinator throw us off?
+
+There are three numbers that are calculated behind the scenes to determine this.
+ID      Class Attribute / Psedo-Class       Type / Pseudo-Elements
+If you write any selector in VSCode and hover, it will show you the specificity of your selector (x, x, x).
+
+#navbar     vs.     .main .feat .wide
+1, 0, 0                 0, 3, 0
+        #navbar wins out
+
+.main + .active     vs.         .main a:hover
+0, 2, 0                         0, 2, 1
+            .main a:hover wins
+
+
+-- The Cascade --
+In the vent of a conflict, which rule "wins"?
+It'll be decided via an algorithm using these factors:
+1. Importantance    2. Origin   3. Specificity  4. Position
+(Marked important?) (Dev / Browser) (See above) (Actual position in your document / code)
+
+-- Importance --
+We can mark a declaration as important using the !important flag, moving it to the beginning of the cascade.
+However, it's generally not a good idea to use this as it totally changes the flow of natural CSS.0
