@@ -1,0 +1,99 @@
+-- Adjacent Combinators --
+The + combinator selects elements that are directly -after- the first element.
+
+h1 + p {
+    color: blue;    This targets the <p> tags that come directly after an h1 tag.
+}
+
+
+-- Sibling Combinators --
+The ~ combinator selects siblings.
+The 2nd element must follow the 1st element (immediately or not) and they MUST share the same parent.
+
+
+-- Pseudo-Classes --
+We 'add-on' pseudo-classes to elements selected in our CSS to give them added style / functionality.
+
+Here are some examples of pseudo-classes:
+
+.decide button: hover {
+    color: deeppink;    Turns the button from its set color when hovering the cursor
+}
+
+button:active {
+    background-color: purple;   Turns the button purple WHEN the button is in the process of being clicked
+}
+
+input[type="text"]:focus {
+    color: red;                 Turns the focused input's text to red.
+}
+
+input:disables {
+    background-color: red;  Any inputs that have the -disabled- attribute will be red.
+}
+
+input:placeholder-shown {
+    background-color: gold; Any inputs that have a placeholder attribute.
+}
+
+Location pseudo-classes typically deal with links and navigation.
+
+a:visited {
+    color: indigo;
+}
+
+Tree-structural pseudo-classes
+Allow us to style particular elements based on their position in a structural tree.
+
+li:first-of-type {
+    border: 2px solid yellow;   Puts a border around only the first line item
+}
+
+li:nth-of-type(2) {             The number indicates if it's 1st, 2nd, 3rd...
+    border: 2px solid orange;   (2n) would indicate every two elements (2nd, 4th...)
+}
+
+body:not(h1, h2, h3) {
+    border: 2px solid magenta;  Styles everything -not- included
+}
+
+
+-- Pseudo-Elements (And how to style them!) --
+These allow us to style particular parts or pieces of elements (not states like pseudo-classes!)
+
+These have a double-colon syntax ::
+
+p::first-line {
+    color: blue;
+    text-transform: uppercase;  This applies to only the first line of every paragraph.
+}
+
+p::first-letter {
+    color: green;
+    font-size: 150%;
+}
+
+p:first-of-type::first-letter {
+    font-family: monospace;
+}
+
+input::placeholder {
+    font-weight:bold;
+    opacity: .5;
+}
+
+p::selection {
+    color: green;
+    background-color: blue;     This is for if a user selects/highlights a <p> tag on your webpage.
+}
+
+
+-- Specificity --
+When multiple rules with different selectors apply to the same elements...which one wins out?
+
+Classes are more specific than element selectors.
+The pecking order goes like this:
+1. Inline Styles                        (most)
+2. ID selectors
+3. Class | Attribute | Pseudo-Class
+4. Type | Pseudo-Elements               (least)
