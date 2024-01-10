@@ -5,7 +5,7 @@ body {
 }
 
 .top-hero {
-    background-color: #60ccb5;
+    background-color: #24a186;
     min-height: 90vh;
     color: white;
     display: inline-block;
@@ -39,7 +39,7 @@ body {
 
 .navbar .contact {
     background-color: white;
-    color: #60ccb5;
+    color: #24a186;
     padding: 14px 24px;
     text-decoration: none;
 }
