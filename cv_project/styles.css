@@ -5,7 +5,7 @@ body {
 }
 
 .top-hero {
-    background-color: #f08e80;
+    background-color: #60ccb5;
     min-height: 90vh;
     color: white;
     display: inline-block;
@@ -27,6 +27,10 @@ body {
     margin-left: 16px;
 }
 
+.navbar .links a:hover {
+    text-decoration: underline;
+}
+
 .navbar p {
     font-size: 2rem;
     font-weight: bold;
@@ -35,7 +39,7 @@ body {
 
 .navbar .contact {
     background-color: white;
-    color:#f08e80;
+    color: #60ccb5;
     padding: 14px 24px;
     text-decoration: none;
 }
@@ -148,4 +152,17 @@ body {
     font-size: 0.9rem;
     color: grey;
     margin-bottom: 32px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 60px;
+    text-align: center;
+}
+
+footer img {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 8px;
 }
