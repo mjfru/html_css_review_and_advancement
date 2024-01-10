@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Forum", serif;
+}
+
+.top-hero {
+    background-color: #f08e80;
+    min-height: 90vh;
+    color: white;
+    display: inline-block;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 20px 32px;
+    box-sizing: border-box;
+}
+
+.navbar .links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-left: 16px;
+}
+
+.navbar p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.navbar .contact {
+    background-color: white;
+    color:#f08e80;
+    padding: 14px 24px;
+    text-decoration: none;
+}
+
+.contact:hover {
+    opacity: 0.8;
+}
+
+.content {
+    padding: 0 15%;
+}
+
+.tagline {
+    color: white;
+    font-size: 4.5rem;
+    letter-spacing: 2px;
+    padding: 0;
+}
+
+.two-column-section {
+    font-size: 2rem;
+}
+
+.two-column-section > p {
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.two-column-section .skills {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0;
+    list-style: none;
+}
+
+.two-column-section .skills li {
+    width: 50%;
+    float: left;
+    font-size: 1.25rem;
+    margin: 6px 0;
+}
+
+.blog-section {
+    padding: 64px 0;
+}
+
+.blog-content {
+    padding: 0 15%;
+}
+
+.post {
+    margin-top: 24px;
+}
+
+.two-column-section .post {
+    width: 50%;
+    float: left;
+}
+
+.post-heading {
+    font-size: 1.5rem;
+}
+
+.post-text {
+    font-size: 1rem;
+}
+
+.post .post-date {
+    font-size: 0.9rem;
+    color: grey;
+    margin-bottom: 32px;
+}
+
+.post p {
+    margin: 8px 0;
+}
+
+.events-section {
+    background-color: #fdf0e6;
+    padding: 64px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.events-content {
+    padding: 0 15%;
+}
+
+.event-card {
+    width: 50%;
+    float: left;
+    margin-top: 24px;
+}
+
+.event-card p {
+    margin:9px 0;
+}
+
+.event-title {
+    font-size: 1.5rem;
+}
+
+.event-location {
+    font-size: 1rem;
+}
+
+.event-card .event-date {
+    font-size: 0.9rem;
+    color: grey;
+    margin-bottom: 32px;
+}
