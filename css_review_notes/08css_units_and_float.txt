@@ -1,0 +1,135 @@
+-- CSS Units...Finally! --
+
+-- Relative & Absolute Units --
+Relative units specify that an element is...well, relative to something else!
+It could be relative to a parent element, a container, the body of the page, or even a user's window size.
+These include:
+    - EM
+    - REM
+    - VH
+    - VW
+    - %
+
+Absolutes aren't relative to anything, regardless of how big the parent or viewport is.
+These include:
+    - px
+    - cm
+    - mm
+    - pt
+    - q (1/40 of a cm...)
+    - And more!
+
+-- Working with Percentages --
+Percentages are ALWAYS relative to some other value.
+Sometimes it's a value from a parent and other times it's a value from the element itself!
+Most of the time percentages are used for widths and heights...occasionally for margins and padding too.
+
+width: 50%; - half the width of its parent element
+
+.wrapper {
+    height: 600px;
+}
+
+.wrapper div {
+    height: 50%; <-- this will be 50% of 600px, 300px.
+}
+
+p {
+    font-size: 40px;
+    line-height: 100%;  <-- this will be 40px, 200% would be 80px.
+}
+
+
+-- REM Units --
+Root EMS - Relative to the root HTML's element's font-size.
+These are often the easiest to work with!
+
+If the root font-size is 20px, 1 rem is always 20px, 2 rem is 40px, etc.
+Every page you load has a default (root) font size, it's usually 16px.
+Rem units make it easy to scale fonts for accessibility and responsiveness and to adjust them on the fly...or if the user changes their browser settings to make fonts appear larger.
+
+h1 {
+    font-size: 8rem     <-- This would likely be 8 x 16, 128px
+}
+
+p {
+    font-size: 1.5rem   <-- This would likely be 24px (16 x 1.5)
+}
+
+
+-- Understanding EM Units --
+Em's are also relative units and are named after the width of the 'M' character in typography.
+With font-size, 1em equals the font-size of the parent.
+2em is twice the font-size of the parent element.
+
+This is different from REMs, as we're talking about only parent elements, not the root.
+
+.container {
+    font-size: 20px;
+}
+
+h1 (in the container) {
+    font-size: 4em;     <-- 80px
+}
+
+p {
+    font-size: 1.5em;   <-- 30px
+}
+
+With other properties, 1em is equal to the computed font-size of the element itself.
+
+h1 {
+    font-size: 4em;     <-- 80px (using previous example)
+    margin: 0;
+    margin-left: 1.5em;   <-- 120px
+}
+
+
+-- VW & VH --
+View Width & View Height!
+1vw is 1% of the width of the viewport...1vh is 1% of its height.
+
+Example:
+height: 100vh (as seen in the previous project) would make an element take up the full height on a screen (the visible part of the browser window).
+
+Typically we use these for larger content, NOT things like fonts, line-spacing, etc.
+
+.container {
+    vh: 100;    <-- Height will take up 100% of the viewport (once margin is 0'd)
+}
+
+* Remember, 100% would mean 100% of the -parent- element but not necessarily the entire screen port.
+
+
+-- So, which to use and when?? --
+px - Avoid for font-sizes; use for small details like borders and shadows.
+They don't scale well but sometimes you want absolute units for underlines, shadows, borders, etc.
+
+rem/em - Font-sizes and often padding/margin.
+Both scale well and with rems, it's easy to keep things relative to each other.
+Ems are nice when you want something to be relative to its parents font size.
+
+% - Useful for defining layouts and widths.
+
+vh/vw - Used for larger layout concerns.
+When wanting to cover the whole screen or an overlay.
+
+These are just suggestions and everything is flexible!
+
+
+-- Float --
+Float tells an element to position itself in the left or right side of its container.
+It gets removed from the normal document flow, which allows text and inline elements to wrap around it.
+Originally, this might've been used for things like newspaper columns where a picture juts into the text.
+
+Before flexbox and grid, this is how many layouts were made!
+These days, we don't use it for the purpose but for getting creative with pictures and blocks of text.
+
+The default value for float is 'none'.
+
+img {
+    float: left;    <-- taken out of normal flow, put on the left edge of the container, and the other content wraps around it.
+}
+
+Be careful when applying padding and margin to floated items and things around it.
+It's usually best to apply margin and padding to the floated item rather than, say, a <p> tag that wraps around it.
