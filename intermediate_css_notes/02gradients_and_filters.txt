@@ -1,0 +1,86 @@
+-- Gradients --
+There are different types of gradients we can use, but the first we'll discuss is a - linear gradient -
+
+-- Linear Gradients --
+The linear-gradient() function creates an image consisting of a transition between two or more colors along a straight line.
+It can be top to bottom, left to right, angled, etc.
+
+.box {
+    border: 2px solid black;
+    height: 400px;
+    width: 400px;
+    background-image: linear-gradient(cyan, yellow, magenta)     <-- To make a gradient (as a background, we use a function! Inside, the function takes colors (hex, rgb, named, etc.)as parameters)
+}
+
+To specify an angle, make a number followed by deg as the first parameter:
+background-image: linear-gradient(45deg, cyan, yellow)
+or
+background-image: linear-gradient(to bottom right, magenta, grey);
+
+If you use RGBA colors (note the transparency), you can have multiple gradients stacked on top of each other.
+
+You can also add a percentage value of how much of a particular color you'd like to gradient to use:
+...:linear-gradient(135deg, orange 60%, cyan);
+Otherwise, the colors will be divided up evenly.
+
+
+-- Radial Gradients --
+The next two gradients are used far less than linear-gradients but it's worth mentioning them a bit here.
+The radial gradient radiates out from a central origin location, potentially making a circle / halo effect.
+
+.box {
+    border: 2px solid black;
+    height: 400px;
+    width: 400px;
+    background-image: radial-gradient(cyan, pink, blue);
+}
+
+We can also control the ending shape and position by indicating it before the colors: (ellipse at bottom, cyan 70%, pink...).
+
+
+-- Conic Gradients --
+These are gradients with color transitions rotated around a center point (rather than the center).
+These can be thought of as pie charts and/or color wheels.
+
+background-image: conic-gradient(cyan, yellow);
+To avoid a harsh line/cut off, you can end with the same color you started with.
+
+
+-- Repeating Linear Gradient --
+This is very similar to linear gradients, even taking the same parameters, but the colors repeat infinitely in all directions until the container is covered.
+This is useful for making patterns, stripes, plaid, fabric patterns, etc.
+There are also repeating radial and conic gradients as well but they are pretty niche.
+
+repeating-linear-gradient(45deg, blue, red, 33%);
+
+
+-- The Background Shorthand --
+Background is actually a shorthand property, similar to border!
+This is generally used for a background image, position, and size all in one go.
+
+.box {
+    ...other properties;
+    background: url("images/img.jpg") no-repeat center/200%;
+}
+
+Size, if included, must be included immediately after the position, seperated with a '/'.
+
+
+-- Filters --
+Filter applies graphical / photoshop-like effects to elements, including backgrounds.
+
+.box {
+    background: url(...);
+    background-size: cover;
+    filter: blur(5px);      <-- the more pixels, the more blur
+}
+
+img {
+    width: 500px;
+    filter: grayscale() contrast(150%);
+}
+
+img {
+    ...
+    filter: hue-rotate(180);    <-- totally swaps the color palette
+}

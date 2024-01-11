@@ -1,0 +1,67 @@
+-- Background --
+Background is a pretty robust property with various ways we can manipulate it.
+
+background-image is used by specifying a url inside of a parentheses ().
+
+.box {
+    height: 300px;
+    width: 300px;
+    background-image: url("images/food.jpg");   <-- also possible to have multiple images set here, seperated by a comma.
+    background-color: marine; <-- This will automatically go behind the image and appear if it's transparent.
+}
+
+* We can also use external images too, with the full web address wrapped in the url.
+Now, depending on your sizing, the background may be way out of frame, repeating, out of position etc.
+If the image is too big, it won't be automically shrunk, it'll display it's original size at its original resolution.
+If the image is too small, the default behavior is to have it tile and repeat.
+
+
+-- Background Repeat --
+This comes into play when your image doesn't cover the entire space of its container.
+Usually, you'll want to turn this off as it's not common unless you have a pattern that would look good repeating over and over.
+
+.container {
+    background-repeat: no-repeat;   <-- turns off repeating
+}
+
+Other options include: repeat-x, repeat-y, and the default, repeat.
+
+
+-- Background Sizing (Very Important) --
+.box {
+    height: 500px;
+    width: 900px;
+    background-image: url("images/food.jpg");
+}
+
+As it stands, this box is way too small for the image, you'll only get a little bit of the image in it.
+While you can set specific dimensions, two popular options are - contain - and - cover -.
+
+background-size: contain;   <-- Scales the image as large as possible without cropping or stretch.
+However, if the container is now larger than the image after this, it will result in image tiling unless background-repeat is set to - no-repeat -...but then you have other positioning issues to deal with too.
+
+background-size: cover; <-- Scales the image and preserves the original aspect ratio.
+No extra space, no reptition, but the image is likely cut off unless it's the exact same ratio.
+* Cover is likely the best case, as we can manipulate them easily.
+
+
+-- Background Positioning --
+The background-position property has a few common attributes it can take (top, left, center, right), in addition to custom ones defined with pixels, percentages, etc.
+
+Top, left, right, bottom aligns the image with the specified edge.
+
+Attributes like: top, right; are also valid, it just depends on which edges you want to align.
+
+
+-- Background Clip --
+The background-clip controls where the element's background extends underneath.
+To the padding? The content box?..etc.
+There are three main choices: border-box, padding-box, content-box.
+
+.box {
+    border: 20px dashed red;
+    height: 400px;
+    width: 400px;
+    background-img: url(...);
+    background-clip: padding-box;   <-- goes to the border but NOT underneath, will cover any padding unless border-box is specified.
+}
