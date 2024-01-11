@@ -83,3 +83,27 @@ As before, top, right, bottom, left, and z-index can be used to scoot the elemen
     position: absolute;     <-- child of an element already positioned 
     right: 0;               <-- will move totally to the right of its parent (if parent is not positioned, would move to the right corner of the web page.)
 }
+
+
+-- Fixed --
+Fixed positioning removes the element from the normal document flow and is then positioned relative to the root container element.
+
+No space will be left over from where it used to be.
+
+As with other positioning properties, top, right, bottom, left, and z-index can be used to scoot the element around, relative to the root element.
+
+New with this value is that when you scroll, the fixed element will stay in place (if you have enough content to scroll)!
+
+So, if you make an HTML document that has a lot of content, enough to be scrollable, the following CSS properties will work:
+
+span {
+    font-size: 2rem;
+    background-color: orange;
+    color: white;
+    position: fixed;    <-- before adding any other properties, the document will act like this doesn't take up space and will move on top of whatever content it was next to while that content slides into the area it used to take up.
+    top: 0;
+    left: 0;    <-- these two properties will 'pin' it to the top left of the screen / root element now, even if you scroll.
+
+    OR...
+    bottom: 0; <-- anchors this to the bottom
+}
