@@ -1,0 +1,85 @@
+-- Positioning --
+Refers to a property called position that goes alongside other properties: top, right, bottom, left, and z-index.
+This specifies where an element will be placed on a document.
+This is useful for stacking elements and fine-tuning positions of divs, containers, etc.
+
+
+-- Static --
+This is the default value for position and it allows elements to fit in the normal flow of the document.
+Positioning attributes such as top, right, bottom, left, and z-index have no effect on statically positioned elements.
+
+p {
+    border: 1px solid black;
+    background-color: cyan;
+    margin: 30px;
+    font-size: 2rem;
+    position: static;   <-- this will have no effect on the appearance, as it's the default value anyway
+}
+
+
+-- Relative --
+Element fits in the normal flow of the document but...
+Top, right, bottom, left, and z-index can be used to 'scoot' the element from its default spot.
+Even if the element is offset, its original space in the document is maintained.
+This 'unlocks' it to be moved around.
+
+.relative-example {
+    position: relative;     <-- does nothing just by itself
+    top: 20px;              <-- offsets the top by 20 pixels (can also be negative)
+    left: 40px;             <-- moves it down to the right (offset the left from where it would normally be)
+    background-color: gold;
+}
+
+
+-- Z-Index --
+This determines the order in which orders stack on top of each other.
+A z-index of 3 will always be on top of a z-index of 2 / 1 / 0, for example.
+
+Z-index applies ONLY to positioned elements...not static!
+A z-index takes a numerical value.
+
+
+-- Absolute Positioning --
+Absolutely positioned elements are removed from the normal document flow and is now relative to the nearest parent element with an explicit position property.
+If no parent has a position property other than default (static), it's relative to the root container.
+No space will be left where it used to be!
+As before, top, right, bottom, left, and z-index can be used to scoot the element around.
+
+<h1>Positioning</h1>
+<div class=box"></div>
+<div class=box special"></div>
+<div class=box"></div>
+
+.box {
+    background-color: green;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+}
+
+.special {
+    background-color: orange;
+    position: absolute;     <-- this causes the third box to apprarently "disappear"
+    top: 0;                 <-- these illustrate the idea behind absolute. The 'special' box will move around, stacking on other elements, and the space it existed in will be ignored -- the third box moves into its old spot.
+    left: 0;
+}
+
+<h1>Positioning</h1>
+<div class="box">
+    <span>Hi!</span>
+</div>
+
+.box {
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    position: relative;
+}
+
+.box span {
+    color: white;
+    background-color: orangered;
+    position: absolute;     <-- child of an element already positioned 
+    right: 0;               <-- will move totally to the right of its parent (if parent is not positioned, would move to the right corner of the web page.)
+}
