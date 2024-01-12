@@ -1,0 +1,69 @@
+-- Transform --
+Transform is one of the very best and most performant properties we can utilize in our websites.
+It allows us to rotate, scale, skew, and/or translate elements on our page.
+
+-- Translate --
+The - translate - attribute here allows us to move an element around the page.
+For translate, we have two main options: translate-x and translate-y, depending on which axis we want to use (and of course, we can use both of them together too).
+
+HTML:
+<div class="box" class="first"></div>
+<div class="box"></div>
+<div class="box"></div>
+
+CSS:
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    display: inline-block;
+}
+
+.first {
+    background-color: red;
+    transform: translate(400px);    <-- space is left behind where it was but other elements aren't effected
+    /* Or, to use both x and y translations: 
+    tranform: translate(100px, 200px); */
+}
+
+We don't really use translate for layout, this is just an example.
+We use it mainly for animation purposes which aren't seen from the above.
+
+
+-- Rotation --
+Rotation is used to, well, rotate or turn an element!
+It can be used to add interactivity, signal that an element is waiting to be clicked, or for a loading indication.
+
+Syntax in CSS:
+
+.box {
+transform: rotate(45deg);
+}
+
+Keep in mind the rotation origin is always in the -middle- of an element.
+h1 {
+    transform: rotate(-1deg);
+}
+
+rotateX() moves elements toward or away the user (like on a rotisserie!), instead of rotating it like a 2D wheel with normal rotate();.
+rotateY() does the same thing but it'll rotate the element like a helicopter propeller going around and around.
+
+
+-- Scale --
+Scale will grow or shrink an element depending on the arguments provided to it.
+
+.icon {
+    transform: scaleY(2);   <-- vertical stretching
+    transform: scaleX(5);   <-- horizontal stretching
+    transform: scale(2, 5); <-- double in size horizontally, five time vertically.
+}
+
+
+-- Transform Origin --
+This controls where our transformations originate, commonly used for rotations!
+It'll rotate an element based on where you put the 'pin', such as a top left corner.
+
+.box {
+    transform-origin: bottom right; <-- without this, the box will rotate from the center
+    transform: rotate(45deg);
+}
