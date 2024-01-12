@@ -1,0 +1,107 @@
+-- Transitions --
+Transitions are a form of animation we can create in CSS.
+Key-frame animations are more of a traditional animation that waits for certain events to happen or something that happens in the background.
+
+The transitions in this section are more about an element quickly lighting up, fading out, zooming in a bit, etc.
+
+Transitions animate from one state to another (color to another, size to bigger and back, opacity clear to opaque).
+
+
+-- Transitions & Syntax --
+transition: <property> <duration> <timing-function> <delay>;
+
+Let's break this down a little more into digestible pieces!
+
+HTML:
+<a href="#" class="btn">Hover Me</a>
+
+CSS:
+.btn {
+    border: 2px solid black;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 30px;
+    transition: background-color 0.7s;  <-- <property> <duration>
+    (Anytime the background color changes, do it this way.)
+}
+
+.btn:hover {
+    background-color: orangered;    <-- without transitions, this instantly changes upon hover and is not a transition!
+    /* If transition is here, it's only for hover, not when you take your mouse off too. */
+}
+
+Typically, transitions less than a second or half a second are the best for a good user experience.
+
+
+-- Multiple Properties at Once --
+Let's say we're changing more than just the background color.
+
+.btn {
+    border: 2px solid black;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 30px;
+    color: orangered;
+    background-color: white;
+    transition: background-color 0.7s (NEW!! -->) color 0.5s;
+}
+
+.btn:hover {
+    background-color: orangered;
+    color: white;
+}
+
+Right now (without the New!!), the background transitions properly, but the text color is instant and not transitioning.
+You can list as many transitions as you want in the property.
+transition: all ... is also an option but it's better to be specific.
+Milliseconds (ms) are also an option for timing but it's generally easier to use seconds / decimals of seconds.
+
+
+-- The Timing / Easing Function --
+This determines the rate at which the transition happens. Slows down at the end? Speeds up to start? Etc...
+
+This is difficult to see properly with using only color.
+We can preview the transform property a bit here to demo this.
+
+.btn {
+    border: 2px solid black;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 30px;
+    color: orangered;
+    background-color: white;
+    transition: transform 3s ease-out; (default is a function called ease, ease in-out, linear, steps, and custom options are also available, like cubic-bezier.)
+}
+
+.btn:hover {
+    transform: translateX(100px);
+}
+
+Often times, ease-in, ease-out are the most common properties to use in this instance.
+
+
+-- Transition Delay --
+We can delay the start of a transition by a set time as well.
+
+.btn {
+    border: 2px solid black;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 30px;
+    color: orangered;
+    background-color: white;
+    transition: background-color 2s ease-in 1s;     <-- this puts a 1 second delay into the transition before the color begins to change.
+}
+
+.btn:hover {
+    background-color: green;
+}
+
+
+-- Understanding Animation Performance --
+Some properties are difficult to animate and effect performance of your website overall.
+This has to do with browser rendering and what happens behind the scenes at every step of the browser reading its instructions.
+
+Animating Opacity and using Transform have the least impact on your browser's rendering ability, they only impact the 'composite' phase of rendering, which is also the last and therefore takes a lot of stress off the loading process.
+
+It's likely a good idea to never animate things like width or margin which happen early in the rendering phase, forcing the browser to re-render from an earlier stage than a later one.
