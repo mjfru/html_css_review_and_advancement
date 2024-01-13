@@ -1,0 +1,106 @@
+-- Flexbox - Part 1 --
+Flexbox is a layout method for displaying items in rows or columns.
+It's a relatively recent addition to CSS and was created to address the difficulty of creating layouts.
+Flexbox allows us to distribute space dynamically across elements of an unknown size, hence the term 'flex'!
+
+Flexbox excels at distributing space across a row or column and we'll use it to play to that strength.
+
+It works by having a bunch of items that live in a container.
+To use flexbox, we need to make that container a - flex-container -.
+From there, the items become flex-items and can be easily moved around.
+
+HTML:
+<div class="container"></div>
+
+CSS:
+.container {
+    display: flex   <-- crucial part, adding this to the parent container
+}
+
+-- Main Axis vs. Cross Axis --
+The main axis is the name for the direction in which your content flows.
+    This could potentially be left to right, right to left, top to bottom, and bottom to top!
+The cross axis is perpendicular to the main axis.
+We do not use X and Y when talking about axis or direction in flex-box.
+
+
+-- Flex Direction --
+Our first flex property and a crucial one at that!
+This will control and determine which axis will act as our main axis.
+We can change layouts with this between a row and column layout.
+
+.container {
+    display: flex;  <-- by default, this is set to flex-direction: row; and you do not have to specify
+    flex-direction: row-reverse;    <-- This causes your layout to be a row but go right to left.
+    flex-direction: column;     <-- changes the entire layout to a column, top to bottom
+    flex-direction: column-reverse; <-- also a column, but content starts at the bottom
+}
+
+
+-- Flex Wrap --
+If content doesn't fit within its container, the default behavior is to shrink the elements down to accomodate them.
+If we want them to wrap over to a new row, we utilize the flex-wrap property in the container.
+
+.container {
+    display: flex;
+    flex-wrap: wrap;    <-- default is nowrap
+    /* a third value, wrap-reverse, also exists, which will flip the normal wrapping direction */
+}
+
+If a height or width isn't specified, a container will grow to continue to accomodate its elements, no matter how large.
+Once specified, we'll start seeing wrapping behavior.
+
+
+-- Justify Content --
+This tells the flex container how to distribute the space along the main axis.
+We can have our content start at the beginning, the end, the middle, put space around elements, etc.
+
+.container {
+    display: flex;
+    justify-content: flex-end;  <-- The order will stay the same but the content of this container moves to touch the right side.(flex-start is the default, left and right are also valid values)
+    justify-content: center;    <-- self-explanatory, centered on the main axis
+    justify-content: space-between;  <-- content goes to the edges and is spaced evenly between them
+    justify-content: space-around;  <-- space will be around every element, nothing touching the edges of the container
+}
+
+All of these properties can also be used for columns as well.
+
+
+-- Align Items --
+Used to align elements across the -cross- axis.
+
+.container {
+    width: 1000px;
+    height 1000px;
+    display: flex;
+    flex-direction:
+    justify-content:
+    align-items: flex-start;    <-- aligns to the beginning of the cross-axis
+    align-items: flex-end;      <-- aligns to the end of the cross-axis
+    align-items: center;        <-- aligns to the center of the cross-axis (super useful), used in tandem with justify-content: center to put something in the absolute middle of a page.
+    align-items: 
+    align-items:
+}
+
+.box {
+    width: 150px;
+    height: 200px;
+}
+
+By default, align-items is set to stretch, which will stretch the elements to take up all the space remaining on the cross axis.
+
+
+-- Align Content --
+This property won't do ANYTHING unless we have multiple rows / columns that are wrapped.
+flex-wrap: wrap must be enabled to be able to use this property!
+
+This determines the spacing between your columns / rows upon wrapping to a new level.
+Align-content takes properties such as flex-start, space-between, center, etc.
+
+
+-- Align Self --
+Same concept as align items BUT this is applied to an individual flex item, not the container it's in.
+
+.special {
+    align-self: flex-start; <-- moves this element to the flex-start while other items in the container remain in place.
+}
