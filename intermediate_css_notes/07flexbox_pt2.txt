@@ -1,0 +1,141 @@
+-- Flexbox Part 2 --
+
+
+-- Flex, the Property --
+Flex is a shorthand property for three other properties: flex-grow, flex-shrink, and flex-basis.
+
+These properties sets how a flex item will grow or shrink to fit its container.
+
+
+-- Flex Grow --
+Flex-grow dictates how much of the available space inside the flex container the item should take up.
+Note: All of this is proportional and uses unit list values.
+
+
+-- Flex Shrink --
+Sets the flex shrink factor of a flex item.
+If the size of all flex items is larger than the flex container, items shrink to fit according to flex-shrink.
+By default, items in a flex-container have a shrink value of 1.
+
+flex-shrink: 1
+
+flex-shrink: 3  <-- this element shrinks 3 times faster than the one above.
+
+These are all about the proportions of when elements will grow/shrink and at what rate.
+
+
+-- Flex-Basis --
+Flex-basis sets the initial, ideal main size of a flex item.
+It sets the size of the content box unless otherwise set with box-sizing (width/height).
+
+p {
+    flex-basis: 1000px;
+}
+
+On the surface, this seems like you're just setting the width.
+It's not setting only the width or height but setting one of them depending on your type of layout (row or column).
+
+Another reason we use this is to easily set all three properties (grow, shrink, basis) at one time.
+This is something that is generally done at the same time anyway!
+
+
+-- Flex Shorthand --
+There are many options available to us when it comes to using the Flex shorthand.
+The simplest thing we can do is set it to a single number.
+
+flex: 1;    <-- flex-grow is 1, flex-basis is 0.
+
+flex: 1 30px;   <-- flex-grow is 1, flex-basis is 30px.
+
+Two unit-less values:
+flex: 2 2;  <-- flex-grow is 2, flex-shrink is 2.
+
+Three values:
+flex: 2 2 10%;  <-- flow-grow is 2, flex-shrink is 2, flex-basis is 10%
+
+There are additional shorthand values we can use.
+
+- initial -
+Equivalent to setting: flex: 0 1 auto;
+
+- auto -
+The same as: flex: 1 1 auto;
+
+- none -
+Fully inflexible; it neither grows nor shrinks in relation to its flex container. Same as: flex: 0 0 auto;
+
+
+-- Order --
+Order property sets the order to lay out an item in a flex OR grid container.
+Note that it is a flex-specific property, use must use display: flex; to utilize it.
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.item (x4) {
+    background-color: green;
+    flex: 1;
+    height: 200px;
+    margin: 30px;
+}
+
+.special {
+    order: -1;  <-- Moves this to the beginning of the order! 
+}
+We can change how these items are ordered with this property!
+
+
+-- Nested Flex Containers --
+It's extremely common practice to nest flex containers in each other.
+This way, we can have multiple parents in a container and flex them to arrange the overall layout more.
+In a navbar, for instance, we might have pure navigational links on the left, in a container, and another container we want on the right to log in, sign up, etc.
+
+<div class="navbar>
+    <nav class="left">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+    </nav>
+    <nav class="right">
+        <a href="#">Login</a>
+        <a href="#">Sign Up</a>
+    </nav>
+</div>
+
+Flex containers in flex containers!
+
+
+-- Common Practice: Centering Content --
+Centering items is another common use-case for flex-box.
+We've practiced this before in previous exercises as well.
+
+<body>
+    <button>Click Me</button>
+</body>
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(cyan, purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+<body>
+    <div class="circle">8</div>     <-- the '8' will be perfectly centered
+    <button>Click Me</button>
+</body>
+
+.circle {
+    background-color: yellow;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
