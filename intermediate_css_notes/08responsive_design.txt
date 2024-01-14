@@ -1,0 +1,167 @@
+-- Responsive Design --
+So far, all our website have been designed to look good on our laptop screens.
+They don't look great on smaller screen sizes, such as when we resize our window or view in on a mobile screen.
+
+Responsive Web Design (RWD) is the art of making websites that work across different screen sizes/orientations.
+In other words, the layout and experience of the website - responds - to the device a user is on to ensure it's always usable.
+
+While there are exceptions, RWD is typically referencing a device's width and adapting to it, but it could also include color spectrums a device is capable of (black and white only, for example), among other things too.
+
+
+-- Media Queries --
+Media queries allow us to specify styles that are only applied at certain device screen widths.
+They are the lifeblood of developing finely-tuned responsive websites.
+
+First, we must understand what exactly a viewport is.
+The viewport is the graphical area for something on a computer.
+For a website, this generally includes the browser window minus the browser UI (tabs, search bar, etc.)
+
+On some devices, the viewport can be as wide as the entire screen.
+On Mobile, where Safari's app takes up the whole device screen, for instance.
+
+On other devices, the viewport can be much smaller than the entire width of the screen.
+For example, a desktop, where you may have multiple smaller browser windows open.
+
+-- Anatomy of a Media Query --
+@media only screen and (max-width: '768px') {
+    /* Styles */
+}
+
+@media initiates a media query and allows us to follow up by specifying other important properties.
+
+The - only - keyword is called a logical operator that prevents older browsers that don't support media queries from applying these styles.
+Otherwise, an old browser would apply these styles in general (and not just for the specified screen widths).
+"If you don't support media queries, then stop."
+
+- screen - is the media type in this case.
+There are other media types like print or all, but screen is what helps us write styles for different device screen sizes.
+
+- and - is another logical operator that helps us combine media features and/or media types together.
+In this case, we're combining a media type (screen) and a media feature (the max-width portion).
+
+
+-- Media Features --
+The - max-width - is actually just the - width media feature - with - max - added on.
+There are many other media features, which can also be modified by min and max.
+
+Width, as in, exact width, also exists but it's a very rare use-case.
+Height is also an option (with min and max) but most websites are designed with the width in mind instead.
+
+Other options include things like:
+    
+    Orientation - has two keyword values, portrait and landscape
+    @media only screen and (orientation: 800px)
+    This is typically important when thinking about working with mobile or tablet devices, which can typically be used in either mode.
+
+    Resolution - adapt to high / low resolution screens (max/min, uses DPI as a unit)
+
+
+-- Media Query Logical Operators --
+So far, we've seen the logical operator - and -.
+We also have - or - and - not - available to us.
+
+@media (max-width: 600px) or (min-width: 1500px) {
+    body {
+        background-color: purple;
+    }
+}
+
+Make the body background color purple when the width is below 600px or above 1500px.
+
+@media not (max-width: 600px) {
+    body {
+        background-color: purple;
+    }
+}
+
+Make the body background color purple for everything above 600px.
+A bit confusing and less used than other options.
+
+
+-- Media Query Levels --
+Think of these as updates to what media queries can do, maintained by the W3 organization.
+
+Level 3 contains much of what we've looked at so far, and, width, orientation, etc.
+Most browsers today support all of what's on level 3.
+
+Level 4 is gaining support but some features might not be on all browsers just yet.
+Using level four, we can use syntax like this:
+
+@media (width < 800px) {        <-- When the width is LESS than 800px. <= can also be used to include 800px.
+    body {
+        background-color: seagreen;
+    }
+}
+
+Level 5 have some features that are pretty rare to find in browsers.
+One example is the inverted-colors feature.
+
+
+-- Common Breakpoints --
+So what number of pixels are good for what?
+
+Mobile Phones: 0 - 480 pixels
+@media only screen and (max-width: 480px) {
+    body {
+        background-color: red;
+    }
+    body::before {
+        content: "Mobile Size"
+    }
+}
+
+Tablets: 481 - 768 pixels
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        background-color: orange;
+    }
+    body::before {
+        content: "Tablet Size"
+    }
+}
+
+Desktops (Small): 769 - 1024 pixels
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        background-color: yellow;
+    }
+    body::before {
+        content: "Small Desktop Size"
+    }
+}
+
+Desktops (Large): 1025 pixels & Up
+@media only screen and (min-width: 1025px) {
+    body {
+        background-color: green;
+    }
+    body::before {
+        content: "Large Desktop Size"
+    }
+}
+
+Note: These breakpoints are a general rule of thumb.
+In reality, every unique layout and design requires attention to its own specific breakpoints.
+Test layouts thoroughly every time!
+
+
+-- Desktop-first vs. Mobile-first --
+Desktop-first is a design/development apporach in which you build a website to work on desktop, and then you'd make it responsive for smaller devices and screen sizes after.
+
+In the earlier days of the web, before mobile web browsing became widely accessible thanks to smartphones, most websites were not responsive.
+As mobile usage grew, sites that were already optimized for desktop began to ad mobile responsiveness.
+
+Mobile-first is a design philosophy that emphasizes designing/building the mobile experience for a website first, and then adding in layout customizations for larger viewport sizes after.
+
+As the internet matured and web traffic shifted to be more mobile-centric with the adoption of smartphoones, this philosophy grew in popularity.
+Web designers and developers needed to ensure that the good experience for their websites carried over to smaller screens too.
+
+Mobile-first design is a very common practice, since it forces you to consider the core, essential pieces of the user experience (UX).
+With limited space on a screen and other limitations like slower internet connection, computing power, etc., designing the core experience around mobile ensures that the most important aspects of the site are prioritized.
+
+From there, designers and developers build upon the core functionality, layout, etc., of the mobile site to add more complexity on larger devices with more screen real estate.
+
+However, desktop-first is still a very popular approach to building websites, since many people feel it makes sense to build the most complex features of the website first and then pare it down for mobile.
+Complex features are often a bottleneck on the development side too.
+
+Features would be built for desktop and then on smaller screen sizes, layouts are simplified and adjusted, or even removed altogether at times.
