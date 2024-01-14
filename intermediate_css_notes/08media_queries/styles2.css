@@ -1,0 +1,45 @@
+h1 {
+    font-size: 3rem;
+}
+
+@media only print {
+    h1 {
+        font-size: 8rem;   /* This will only be applied when actually printing the page */
+    }
+}
+
+body {
+    background-color: red;
+}
+
+@media only screen and (orientation: portrait) {
+    body {
+        background-color: yellow;
+    }
+    h1::before {
+        content: "Portrait ";
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    body {
+        background-color: cyan;
+    }
+    h1::before {
+        content: "Landscape ";
+    }
+}
+
+/* @media only screen and (min-width: 800px) {
+    body {
+        background-color: orangered;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        background-color: yellow;
+    }
+} */
+
+/* The order here matters if we have conflicting styles! The ~~ cascade ~~! */
