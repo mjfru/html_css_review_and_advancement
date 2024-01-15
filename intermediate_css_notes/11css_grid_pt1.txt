@@ -1,0 +1,54 @@
+-- CSS Grid --
+With grid, another new-ish essential layout tool, we have lots of different properties to pick and choose from.
+It helps us build grid-based layouts of all different shapes and sizes.
+Grid also makes it incredibly easy to make a page responsive as well.
+
+Similar to flex-box, we make a parent element a grid container and we can then move, change, and reposition its grid item children around in that container. 
+
+How is it different from Flexbox?
+Do you need to control the layout in rows OR columns...or rows AND columns?
+
+Flexbox = row OR column
+Grid = row AND column
+
+
+-- Enabling CSS Grid --
+Similar to flexbox, we have to make the parent container a grid container!
+
+.container {
+    display: grid;
+}
+
+We can also use - display: inline-grid; -- as well if we want the outside of the grid container to be an inline element.
+
+Next, we specify how many columns and rows we want.
+
+.container {
+    display: grid;  <-- with just this, it's one column
+    grid-template-columns: 1fr 1fr;
+}
+
+...What's an 'fr'?
+It stands for 'fraction' and represents an even proportion of the grid which is useful when we don't want to calculate % widths!
+This is calculated by looking at the width of your parent container and choosing the correct proportions.
+1fr 2fr 1fr would result in two smaller columns (1 fraction of the box) flanking a column doubly as large.
+
+Other units can also be mixed and matched...such as:
+grid-template-comlumns: 150px 1fr 150px;
+The 1fr here will take up whatever is leftover!
+
+
+-- Grid Template Rows --
+This is the same as columns...but with rows!
+
+.container {
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+}
+
+This will make 3 rows in our grid, all 100px tall.
+Of course, fr units, a mixture of units, are still valid when working with rows.
+
+If we want to built a proper grid, we utilize both templates.
+grid-template-columsn: 1fr 1fr;
+grid-template-rows: 1fr 2fr 1fr 2fr;
