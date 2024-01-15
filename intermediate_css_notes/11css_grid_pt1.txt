@@ -52,3 +52,84 @@ Of course, fr units, a mixture of units, are still valid when working with rows.
 If we want to built a proper grid, we utilize both templates.
 grid-template-columsn: 1fr 1fr;
 grid-template-rows: 1fr 2fr 1fr 2fr;
+
+
+-- Grid-Template Shorthand --
+Grid-template is a shorthand property we can use instead of specifying both grid-template-rows and grid-template-columns on seperate lines.
+The syntax looks like this:
+
+.container {
+    display: grid;
+    grid-template: 1fr 1fr (ROWS) / 1fr 1fr 1fr (COLUMNS)   (same layout as the above example)
+}
+
+* Note: Do not mix this up with grid-template-areas! That'll be covered later.
+
+
+-- The minmax() Function --
+The minmax() function allows you to define a minimum and a maximum value for the width a column should span or the height a row should span.
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr); (min first, then maximum)
+}
+
+If we want to have more than one column...
+
+...{
+    grid-template-columns: minmax(500px, 700px) minmax(500px, 700px)
+}
+
+And the syntax is the exact same for making rows like this as well.
+It's best to hardcode a pixel amount or percentage for the minimum and something that can scale for the maximum, a percentage or a fraction.
+
+Using auto for the maximum value will allow the row/column to grow to fit whatever content you have instead.
+
+
+-- The repeat() Function --
+Repeat() lets you define many columns or rows with certain values with ease, instead of typing the same thing over and over.
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  (repeat 3 times with the space of 1fr)
+    grid-template-rows: repeat(2, 1fr);     (repeat 2 times with the space of 1fr)
+}
+
+...{
+    grid-template-columns: repeat(5, minmax(100px, 250px));
+}
+
+...{
+    grid-template: repeat(2, 1fr) / repeat(5, minmax(100px, 250px));
+}
+
+
+-- The fit-content() Function --
+The fit-content() function tells a Grid Track to be as wide/tall as its content, but with a max value that it shouldn't exceed.
+It takes a bunch of different values like px, %, etc., as a max.
+
+.container {
+    display: grid;
+    grid-template-columns: fit-content(300px) fit-content(500px) fit-content(300px)
+    grid-template-rows:
+}
+
+* "Take up the normal size of your content but don't go above this threshold."
+
+
+-- Grid Gaps --
+Grid Containers come with gap styles to easily control the spacing between Grid items, such as column-gap and row-gap.
+Again, this goes on the grid container and not the items themselves.
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 16px;
+}
+
+Naturally, there is also a shorthand way we can specify both column and row gaps together:
+grid-gap: 16px; <-- for row and column gaps.
+grid-gap: 10px 40px <-- rows are 10px, column gaps are 40px.
+This can also be used as just 'gap'.
