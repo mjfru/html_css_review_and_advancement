@@ -1,4 +1,4 @@
--- CSS Grid --
+-- CSS Grid Part 1 --
 With grid, another new-ish essential layout tool, we have lots of different properties to pick and choose from.
 It helps us build grid-based layouts of all different shapes and sizes.
 Grid also makes it incredibly easy to make a page responsive as well.

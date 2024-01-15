@@ -1,0 +1,140 @@
+-- CSS Grid Part 2 --
+
+-- Grid Items --
+So far, we've only been applying properties on the container element, not the items!
+Grid items are child elements of any Grid Container.
+Many properties are available to grid items for them to position themselves in the container.
+
+By default, a grid item with no specified grid styles will take up 1 cell in the grid (1 column, 1 row)...which is pretty great!'
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;    <-- without adding anything after here on the parent or child, the first item will slot into the first grid-track slot.
+}
+
+.box {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+-- Positioning Grid Items --
+Using number values, you can specify which grid lines the Grid Item should span.
+It will start at the beginning of the column/row you specify and end - right before- the column row you also specify.
+
+.container .item {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1; 
+    grid-row-end: 2;
+}
+
+
+-- The Span Keyword --
+Using span, you can specify how many columns/rows a Grid Item should span.
+Note: By default, it starts in the first column/row and the number refers to grid tracks, not grid lines.
+"Span two tracks."
+
+.first {
+    grid-column-start: 1;   <-- optional
+    grid-column-end: span 2;
+    grid-row-start: 1;      <-- optional
+    grid-row-end: span 2;
+}
+
+
+-- Positioning Grid Items - Shorthand --
+You can use - grid-column - & - grid-row - as a shorthand property.
+It takes a <start value> / <end-value>.
+
+We can instead simply use:
+
+.container .item {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+An even shorter...shorthand is grid-area!
+
+grid-area: 2 / 1 / 2 / 4;
+(row start, end, column start, end)
+
+
+-- Naming Your Grid Lines --
+You can also name your lines in a Grid Container!
+This can be helpful later when we position Grid Items, since we can specify which line they start at and which they end at...(more on this soon!)
+
+Your chosen names can go in square [] brackets when you declare some columns or rows.
+
+.container {
+    display: grid;
+    grid-template-columns: [col1-start] 1fr [col1-end col2-start] 1fr [col2-end col3-start] 1fr [col3-end];
+    grid-template-rows: [row1-start] 1fr [row1-end row2-start] 1fr [row2-end];
+}
+
+Now, using name values, you can specify what grid lines the Grid Item should span.
+
+.container .items {
+    grid-column-start: col1-start;
+    grid-column-end: col2-end;
+}
+
+
+-- Grid Template Areas --
+Instructor's favorite method for using grid!
+You can use grid-template-area as a shorthand to setup a grid in a really visually-friendly way.
+Visualize the items in the grid in code and...voila!
+
+.container {
+    grid-template-areas:
+        "a a c"     <-- The spaces are important! The indentation is just for clarity.
+        "b b c";
+}
+
+These letters represent areas that we're working with in our grid.
+
+Next, simply name your grid items by matching their grid-area name and watch as they get positioned exactly where you specified!
+
+.container .item1 {
+    grid-area: a;
+}
+
+.container .item2 {
+    grid-area: b;
+}
+
+A period "." can be used to denote a space you want left blank / as a placeholder.
+grid-template-areas:
+    ". footer ."
+
+
+-- Dynamic Grids --
+So, what if you don't know how many items will be rendered into the grid?
+You can use grid-auto-flow to tell the grid how/where to add new items in the grid.
+Its default value is always set to 'row'.
+
+.container {
+    display: grid;
+    grid-auto-flow: column dense;     <-- now, any additional grid items will popular the next available column.
+}
+
+Adding the - dense - keyword after row or column tells the grid to pack in the space with the next available item that would fit, in order.
+
+
+-- Responsive Grids --
+Grids come with their own properties to implement responsive columns!
+Auto-placement keywords, like auto-fill + auto-fit can be used to let the browser take care of the responsiveness of the grid and the wrapping of columns into new rows when needed.
+
+Instead of hard-coding a number like 3, 4, 5, we can let the browser allow CSS decide how many columns can fit.
+
+These values are part of the repeat() function and is great for making a website more responsive.
+
+.container {
+    width: 700px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);    <-- can also use minmax as second argument, fr, etc.
+}
+
+Auto-fit is going to make all the elements - grow - to fill the space, auto-fill will not.
