@@ -1,0 +1,62 @@
+-- Animations Introduction --
+In addition to transitions, we also have keyframes.
+Transitions are typically one step to a second step and are induced by hovering or some JavaScript.
+
+With animations, there's tons of options.
+One of the best examples of an animation would be a loader animation...circles growing in order, a mouse cursor spinning, etc.
+
+
+-- Defining the Animation --
+First, to define an animation, we use - @keyframes - to define the animation.
+
+@keyframes your_animation_name {
+
+}
+
+Inside your @keyframes annotation, you lay out the steps of your animation.
+
+from {
+    - some animation properties here -
+}
+to {
+    - some animation properties here -
+}
+
+Now, we need to apply our animation to our element(s).
+There are many properties to use here but the two most important may be - animation-name: ... - and - animation-duration: ... -.
+
+Other times, you may want to use a percentage-based approach, where you start at (for example) 0% and end at 50%.
+
+0% {
+    - do this -
+}
+50% {
+    - then do this -
+}
+
+
+-- Delay, Repeat, and More --
+Animation iteration count is used to control how many times an animation will happen before finishing.
+
+The syntax is simple (and the default value is one.)
+
+animation-iteration-count: 2;
+Apparently this is a little rare, as you want something to happen only once (by default) or infinitely, using some JavaScript to turn it off instead.
+
+The value of alternate (and alternate-reverse) for animation-direction will play an animation twice with both versions of itself.
+
+Animation delay does exactly what it sounds like.
+
+Animation timing function (default set to ease) controls the rate something animates at.
+Some values this property can take include: linear, ease-in, ease-out, ease-in-out
+
+
+-- Reusing Animations --
+It's important to note that we can reuse animations for different page elements and let them have their own properties dictating how the animation will behave.
+
+
+-- Animation Shorthand --
+The shorthand for all of this (and more) is typically in the following syntax, but has other variants as well:
+
+animation: 2s linear 1s spin
+        keyframes duration / easing-function / delay / name
