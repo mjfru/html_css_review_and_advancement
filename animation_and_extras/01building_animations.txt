@@ -60,3 +60,9 @@ The shorthand for all of this (and more) is typically in the following syntax, b
 
 animation: 2s linear 1s spin
         keyframes duration / easing-function / delay / name
+
+
+-- Animation Fill Mode --
+This property tells an animation what to do at its end state.
+You might have something moving and want it to stop without reseting to its original position, for example.
+This can take values like forwards, backwards, and both.
