@@ -194,6 +194,12 @@ footer {
     }
 }
 
+@media only screen and (min-width: 769px) {
+    .mobileNav {
+        transform: translateX(0);
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .navbar {
         padding: 16px 24px;
