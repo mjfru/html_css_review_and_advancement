@@ -1,0 +1,33 @@
+-- The calc() Function --
+The calc() function lets us do some quick math within our CSS.
+
+This can be useful in many different cases, but it's most commonly used when you need to create a value that is a mix of units, like percentages and pixels.
+
+button {
+    padding: calc(43px - 21px);     <-- impractical, but will equate to 22px. Do not do this.
+}
+
+Let's say we have 2 cards next to each other.
+    - The left card is 40% wide with a 16px margin on the right.
+    - The right card is 60% but we want it to maintain the gap between the two in the middle from the 16px margin.
+
+We can use calc() to account for that 16px margin and subtract it from the 60% width!
+
+.card1 {
+    width: 40%;
+    float: left;
+    margin-right: 16px;
+}
+
+.card2 {
+    width: calc(60% - 16px);
+    float: right;
+}
+
+
+-- The Rules of Calc() --
+    - You can use four operators: addition, subtraction, multiplication, and division.
+    - White space is needed around the addition and subtraction operators.
+    - Dividing by 0 will cause errors.
+    - You can next calc() functions
+    - You can use CSS variables within calc() functions

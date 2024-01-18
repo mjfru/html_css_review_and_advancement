@@ -1,0 +1,88 @@
+-- Modern CSS --
+This page will be a hodgepodge of more advanced CSS techniques, some of the being farily new, some of them not so much!
+
+
+-- CSS Variables --
+So far, we've often hard-coded the same values over and over again, which is repetitive and not DRY!
+Updating these values across many big files can be a huge pain...
+
+CSS Variables, or customer properties, provide us a convenient way to reuse properties.
+This means things like...no more copying and pasting hex and RGB colors!
+This makes it so much easier to 'rebrand', change colors, fonts, etc. with just one switch rather than a huge amount of changes.
+
+
+-- Writing CSS Variables --
+CSS Variables let us define values that can be reused over and over again.
+Assign the variable name instead of the hard-coded values, and then you only ever need to update it once!
+
+We first have to declare our variable(s), after that, we can use it wherever we want.
+Instead of declaring colors like this:
+
+button {
+    background-color: rgb(87, 125, 20);
+}
+
+h1 {
+    color: rgb(87, 125, 20);
+}
+
+We can do this instead!:
+
+:root {
+    --brand-color: rgb(87, 125, 20);
+}
+
+Now, to use this, we can simply type:
+
+button {
+    background-color: var(--brand-color);
+}
+
+h1 {
+    color: var(--brand-color);
+}
+
+Furthermore, we're not limited to colors of course.
+We can store fonts, sizing, gradients, shadows, etc. in custom fonts to easily manage the styles on our page.
+
+
+-- The Root Pseudo-Class --
+While we don't have to define our variables in this selector, it's common practice.
+This pseudo-class, :root, is the same as declaring html as a selector but with a higher priority.
+
+If you declare a custom variable in a different tag:
+
+p {
+    --brand-color: #029d2d;
+}
+
+You can only access this when using <p> tags.
+Using :root allows the entire document to have access to the custom variables.
+You can then be more specific if you need to change it within tags, classes, ids, etc.
+
+This is also useful media queries, where we can keep or change the value of a custom variable.
+
+@media screen and (max-width: 800px) {
+    :root {
+        --brand-color: rgb(160, 30, 200);   <-- at this screen size, this is now the color.
+    }
+}
+
+
+-- Using Variables for Sizes --
+It's very common to have variables set for spacing and font size and create our own 'eco-system' of values.
+
+:root {
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+}
+
+button {
+    padding: var(--spacing-lg);
+}
+
+@media screen and (max-width: 800px) {
+    button {
+        padding: var(--spacing-md);
+    }
+}

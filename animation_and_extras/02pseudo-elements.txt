@@ -1,0 +1,26 @@
+-- ::before & ::after Pseudo-Elements --
+We can use the ::before and ::after pseudo-elements to insert content onto a page via CSS without needing it to be in the HTML!
+
+We've seen things like: p::first_line, h1::first_letter, p::selection before.
+
+More commonly, however, are the slightly strange ::before and ::after
+With these, we insert a child of an element without having to edit our HTML at all.
+
+CSS:                        HTML:
+div::before {               <div>
+    content: "hello";           hello
+}                           <! -- rest of div content -->
+                                goodbye
+div::after {                </div>
+    content: "goodbye";
+}
+
+While this example seems fairly useless, there are quite a few great use-cases for this.
+Note: This should NEVER be used to any content we consider to be absolutely essential.
+This is only really used for decorative purposes.
+An example like this might be to include really decorative quotation marks around, well, a quote.
+
+
+-- Gradient Borders with Pseudo-Elements --
+The examples of gradient borders, both with and without, are an example of when to use a pseudo-element.
+In the first example, (index.html), the <div> that provides the gradient border does absolutely nothing but provide style; cluttering our HTML page and making it clunky for screen readers and skimmers.
