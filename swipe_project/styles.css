@@ -352,6 +352,7 @@ p {
 /* Unifed Platform Section */
 .unified-platform-section {
     padding: var(--spacing-xl) 0;
+    background-color: var(--bg-light);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -376,6 +377,7 @@ p {
     width: 100%;
     display: flex;
     justify-content: center;
+    background-color: var(--bg-light);
 }
 
 .graphic-grid {
@@ -415,10 +417,25 @@ p {
 /* Integration Section Styles */
 .integrations-section {
     width: 100%;
+    padding: calc(var(--spacing-xl) * 3) 0;
     display: flex;
     justify-content: center;
     color: var(--text-light);
+    /* background-color: var(--primary-accent); */
+    position: relative;
+    z-index: 1;
+}
+
+.integrations-section::before {
+    content: "";
+    width: 100%;
+    height: 1100px;
     background-color: var(--primary-accent);
+    position: absolute;
+    top: -32px;
+    left: 0;
+    z-index: -1;
+    transform: skewY(-10deg);
 }
 
 .integrations-section .card-container {
@@ -460,6 +477,7 @@ p {
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: calc(var(--spacing-xl) * 3) 0;
 }
 
 .why-swipe-section .card-container {
@@ -480,13 +498,25 @@ p {
 
 /* Global Section */
 .global-section {
-    background-color: var(--primary-accent);
+    /* background-color: var(--primary-accent); */
     width: 100%;
     display: flex;
     justify-content: center;
     color: var(--text-light);
     position: relative;
-    padding: calc(var(--spacing-xl) * 3) 0;
+    padding: calc(var(--spacing-xl) * 3) 0 0 0;
+}
+
+.global-section::before {
+    content: "";
+    width: 100%;
+    height: 1200px;
+    background-color: var(--primary-accent);
+    position: absolute;
+    top: -32px;
+    left: 0;
+    transform: skewY(-10deg);
+    z-index: -1;
 }
 
 .global-section a {
@@ -527,6 +557,17 @@ p {
     display: flex;
     justify-content: center;
     padding: calc(var(--spacing-xl) * 2) 0;
+    position: relative;
+}
+
+.virtual-events-section::before {
+    content: "";
+    background-color: var(--bg-white);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }
 
 /* .virtual-events-section .two-column {
