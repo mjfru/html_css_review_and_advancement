@@ -855,6 +855,12 @@ p {
 
 /* Mobile */
 @media only screen and (max-width: 550px) {
+    :root {
+        --h1-size: 58px;
+        --h1-height: 65px;
+        --h3-size: 34px;
+    }
+
     .two-column {
         flex-direction: column;
     }
@@ -866,6 +872,23 @@ p {
     .two-column .col-right {
         width: 100%;
         padding: 0;
+    }
+    /* Navbar Styles */
+    .navbar {
+        margin: 0 0 var(--spacing-lg) 0;
+    }
+
+    /* Hero Styles */
+    #gradient-canvas {
+        height: 820px;
+    }
+
+    .hero .two-column .hero-phone-container {
+        display: none;
+    }
+
+    main {
+        margin: var(--spacing-lg) 0 0 0;
     }
 
     .partners-grid {
