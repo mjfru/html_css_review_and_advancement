@@ -905,6 +905,10 @@ p {
     }
 
     /* Why Swipe Section */
+    .why-swipe-section {
+        padding: var(--spacing-md) 0 var(--spacing-xl) 0;
+    }
+
     .why-swipe-section .card-container {
         flex-wrap: wrap;
     }
@@ -982,12 +986,29 @@ p {
         grid-template-columns: 1fr 1fr;
     }
 
+    /* Unified Platform */
+    .unified-platform-section {
+        padding: var(--spacing-md) 0;
+    }
+
     /* Integrations Section */
+    .integrations-section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .integrations-section::before {
+        height: 900px;
+    }
+
     .integrations-section .col-right {
         display: none;
     }
 
     /* Why Swipe Section */
+    .why-swipe-section {
+        padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+    }
+
     .why-swipe-section .card-container .card {
         width: 100%;
         margin: var(--spacing-sm) 0;
@@ -998,6 +1019,14 @@ p {
     }
 
     /* Global Section */
+    .global-section {
+        padding: var(--spacing-xl) 0 0 0;
+    }
+
+    .global-section .card-container {
+        margin: var(--spacing-md) 0;
+    }
+
     .global-section .card-container .card {
         width: 100%;
         margin: var(--spacing-sm) 0;
@@ -1008,6 +1037,10 @@ p {
     }
 
     /* Virtual Events */
+    .virtual-events-section {
+        padding: 0;
+    }
+
     .virtual-events-section .swipe-sessions-card {
         width: 100%;
         margin: var(--spacing-lg) 0;
@@ -1023,6 +1056,11 @@ p {
 
     #sessions-logo {
         width: 300px;
+    }
+
+    /* Getting Started */
+    .getting-started-section {
+        padding: var(--spacing-md) 0;
     }
 
     /* Footer */
